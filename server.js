@@ -122,7 +122,7 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 var User = mongoose.model('User', userSchema);
 var Track = mongoose.model('Track', trackSchema);
 
-mongoose.connect(process.env.IP);
+mongoose.connect(process.env.MONGOHQ_URL || process.env.IP);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
