@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1 Contacts
+  ol
+    each contact in contacts
+      li= contact.doc.name + ' - ' + contact.doc.phone

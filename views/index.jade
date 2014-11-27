@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    title Track
+    link(rel='stylesheet', href='/css/jquery-ui.min.css')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/main.css')
+    script(src='/js/jquery.min.js')
+    script(src='/js/jquery-ui.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC-s8jv5GU34QNd4PILf03ZQprEx3ponpQ&sensor=false')
+    script(src='/js/main.js')
+  body
+    div#map-toolbar
+        label Total Route:
+        span#map-total-route
+        
+        label(style="padding-left: 30px") Miles So Far:
+        span#map-so-far
+        
+        label(style="padding-left: 30px") Miles To Go:
+        span#map-to-go
+    div#container
+        div#map-canvas
+    div.map-part
+        div
+            label.title Data Points:
+        table#map-miles
+            thead
+                tr
+                    th
+                        label Date
+                    th
+                        label Miles
+            tbody
+    div.map-part
+        div
+            label.title Add Point:
+        div.edit-line
+            label Date:
+            input#map-add-date
+            script.
+                $(function() {
+                    $("#map-add-date").datepicker();
+                });
+        div.edit-line
+            label Miles:
+            input#map-add-miles
+        div.edit-line
+            button#map-add-button(type="button") Add

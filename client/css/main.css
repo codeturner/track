@@ -1,0 +1,57 @@
+html {
+}
+body {
+    font: 14px arial;
+    color: #333;
+    margin: 0;
+    padding: 0
+}
+#container {
+    height: 100%;
+}
+#map-toolbar {
+    padding: 12px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #eee;
+}
+#map-canvas {
+    height: 400px;
+}
+#map-text {
+    padding-bottom: 0px;
+}
+#map-miles {
+    margin: 12px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+#map-miles th, #map-miles td {
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+}
+.map-part {
+    float: left;
+    padding: 12px;
+}
+.map-part + .map-part {
+    padding-left: 36px;
+}
+.map-part .title {
+    font: bold 16px arial;
+}
+.edit-line {
+    margin: 12px 50px;
+}
+.edit-line label {
+    margin-left: -46px;
+    position: absolute;
+    line-height: 24px;
+}
+label {
+    color: #777;
+    display: inline-block;
+    padding-right: 5px;
+}
+input {
+    color: #333;
+}
