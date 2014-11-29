@@ -205,7 +205,7 @@ function renderPoints() {
         for (var idx = 0; idx < data.length; idx++) {
             var row = data[idx];
             var tr = $('<tr data-date="' + row.date + '" data-miles="' + row.miles + '"></tr>');
-            tr.append('<td>' + $.datepicker.formatDate("mm/dd/yy", new Date(row.date)) + '</td>');
+            tr.append('<td>' + row.date + '</td>');
             tr.append('<td>' + row.miles + ' miles</td>');
             body.append(tr);
         }

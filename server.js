@@ -13,6 +13,7 @@ var passportLocal = require('passport-local');
 var bcrypt = require('bcrypt-nodejs');
 var async = require('async');
 var crypto = require('crypto');
+var moment = require('moment');
 
 var app = express();
 
@@ -205,7 +206,15 @@ app.get('/getpoints', function(req, res) {
 		username: req.user.username
 	}, function(err, track) {
 		if (err) console.error(err);
-		res.send(track ? track.data : '');
+		var data = [];
+		if (track) {
+			for (var idx = 0; idx < track.data.length; ++idx) {
+				var date = moment(track.data[idx].date).format('MM/DD/YYYY');
+				console.log('date=' + date);
+				data.push({ date: date, miles: track.data[idx].miles });
+			}
+		}
+		res.send(data);
 	});
 });
 
